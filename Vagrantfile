@@ -9,7 +9,9 @@ Vagrant.configure(2) do |config|
 
       box.vm.provision "shell", inline: <<-SCRIPT
 sudo apt-get update
-sudo apt-get install -y unzip curl
+sudo apt-get install -y ruby ruby-dev unzip
+sudo gem install diplomat --no-rdoc --no-ri
+sudo gem install pry --no-rdoc --no-ri
 
 cd /tmp
 wget https://releases.hashicorp.com/consul/0.6.4/consul_0.6.4_linux_amd64.zip -O consul.zip
