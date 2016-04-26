@@ -3,7 +3,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
   1.upto(3) do |n|
-    config.vm.define "consul#{n}" do |box|
+    config.vm.define "consul0#{n}" do |box|
       box.vm.hostname = "consul#{n}"
       box.vm.network "private_network", ip: "172.20.21.1#{n}"
 
